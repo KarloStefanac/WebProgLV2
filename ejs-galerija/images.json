@@ -1,0 +1,10 @@
+[
+{ "id": 1, "url": "/images/sample-1.svg", "title": "Image 1" }, 
+{ "id": 2, "url": "/images/sample-2.svg", "title": "Image 2" }, 
+{ "id": 3, "url": "/images/sample-3.svg", "title": "Image 3" },
+{ "id": 4, "url": "/images/sample-4.svg", "title": "Image 4" }, 
+{ "id": 5, "url": "/images/sample-5.svg", "title": "Image 5" }, 
+{ "id": 6, "url": "/images/sample-6.svg", "title": "Image 6" },
+{ "id": 7, "url": "/images/sample-7.svg", "title": "Image 7" }, 
+{ "id": 8, "url": "/images/sample-8.png", "title": "Image 8" } 
+]

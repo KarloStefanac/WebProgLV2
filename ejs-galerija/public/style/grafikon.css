@@ -1,0 +1,147 @@
+h1{
+    text-align: center;
+}
+/* Navigacija */
+.dropbtn {
+    background-color: #d40e0e;
+    color: white;
+    padding: 14px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+ nav {
+    position: relative;
+    display: inline-block;
+  }
+  
+ .dropdown-content {
+    align-items:start;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+nav:hover .dropdown-content {
+    display: block;
+  }
+  
+nav:hover .dropbtn {
+    background-color: #ac2b2b;
+  }
+
+/* Chart */
+
+.simple-bar-chart{
+    --line-count: 10;
+    --line-color: currentcolor;
+    --line-opacity: 0.25;
+    --item-gap: 2%;
+    --item-default-color: #060606;
+    
+    height: 10rem;
+    width: 30rem;
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--item-gap);
+    align-items: end;
+    padding-inline: var(--item-gap);
+    --padding-block: 1.5rem; /*space for labels*/
+    padding-block: var(--padding-block);
+    position: relative;
+    isolation: isolate;
+  }
+  
+.simple-bar-chart::after{
+    content: "";
+    position: absolute;
+    inset: var(--padding-block) 0;
+    z-index: -1;
+    --line-width: 1px;
+    --line-spacing: calc(100% / var(--line-count));
+    background-image: repeating-linear-gradient(to top, transparent 0 calc(var(--line-spacing) - var(--line-width)), var(--line-color) 0 var(--line-spacing));
+    box-shadow: 0 var(--line-width) 0 var(--line-color);
+    opacity: var(--line-opacity);
+  }
+.simple-bar-chart > .item{
+    height: calc(1% * var(--val));
+    background-color: var(--clr, var(--item-default-color));
+    position: relative;
+    animation: item-height 1s ease forwards
+  }
+@keyframes item-height { from { height: 0 } }
+  
+ .simple-bar-chart > .item > * { position: absolute; text-align: center }
+ .simple-bar-chart > .item > .label { inset: 100% 0 auto 0 }
+ .simple-bar-chart > .item > .value { inset: auto 0 100% 0 }
+  
+body { 
+    /* margin: 0;  */
+    /* padding-left: 2rem;  */
+    color: #1D1E22;
+    background-color: #f0f0f0;
+    font-family: system-ui, sans-serif; 
+    /* text-align: center; */
+  }
+
+/* body > * { max-width: 45rem; margin-inline: auto} */
+
+.item{
+    transition: transform 0.3s ease;
+}
+ .item:hover{
+    transform: scale(1.05);
+}
+
+/* Tablica */
+
+.movies {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: 10px;
+}
+
+.movies td, .movies th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.movies tr:nth-child(even){background-color: #f2f2f2;}
+
+.movies tr:hover {background-color: #ddd;}
+
+.movies th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #d40e0e;
+  color: white;
+}
+
+.table-container {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  margin: 5px;
+}
+
+@media (max-width: 1100px) {
+  .table-container {
+    flex-direction: column;
+  }
+}

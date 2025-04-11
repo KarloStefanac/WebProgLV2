@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/slike2.css">
+    <title>Galerija</title>
+</head>
+<body>
+    <h1>Galerija slika</h1>
+    <nav>
+        <button class="dropbtn" aria-labelledby="Navigacija">| | |</button>
+            <div class="dropdown-content">
+                <a href="../index.html">Pocetna</a>
+                <a href="grafikon.html">Grafikon</a>
+                <a href="slike.html">Galerija</a>
+            </div>                
+    </nav>
+<br><br>
+<section class="gallery"> 
+    
+    <% images.forEach(image => { %>
+        <div class="responsive">
+        <a href="#lightbox<%= image.id %>"">
+            <img src="<%= image.url %>" alt="<%= image.title %>" loading="lazy">
+        </a>
+        <figcaption><%= image.title %></figcaption>
+    </div>
+    <% }); %>
+</section>
+    <% images.forEach(image => { %>
+        <div class="lightbox" id="lightbox<%= image.id %>">
+            <a href="#" class="close">&times;</a>
+            <img src="<%= image.url %>" alt="<%= image.title %>">	
+        </div>
+    <% }); %>
+</body>
+</html>
