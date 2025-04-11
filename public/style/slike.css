@@ -1,0 +1,147 @@
+h1{
+    text-align: center;
+}
+/* Navigacija */
+.dropbtn {
+    background-color: #d40e0e;
+    color: white;
+    padding: 14px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+ nav {
+    position: relative;
+    display: inline-block;
+  }
+  
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+nav:hover .dropdown-content {
+    display: block;
+  }
+  
+nav:hover .dropbtn {
+    background-color: #ac2b2b;
+  }
+
+/* Galerija */
+
+div.gallery {
+    border: 1px solid #ccc;
+  }
+  
+div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+div figcaption {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+.responsive {
+    padding: 4px 7px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+@media only screen and (max-width: 900px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+@media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.responsive {
+    transition: transform 0.3s ease; /* Smooth transition effect */
+  }
+  
+/* Hover effect */
+.responsive:hover {
+    transform: scale(1.05); /* Increase the size of the image by 10% */
+  }
+
+/* Lightbox */
+.lightbox {
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  .lightbox:target {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  .lightbox img {
+    border-radius: 1em;
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  
+  .lightbox .close {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    height: 1em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 1em;
+    z-index: 1001;
+  }
+  
+  .lightbox p {
+    color:white;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
