@@ -3,4 +3,6 @@
 
 LINK: [Link na railway deployment](https://webproglv2-production.up.railway.app/)
 
+LINK: [Link na ejs-galerija zadatak](https://webproglv2-production-3c11.up.railway.app/slike)
+
 Zadaci su dani u predlošku:
