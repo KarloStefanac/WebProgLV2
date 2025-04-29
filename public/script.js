@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () =>{
                 total_votes: Number(film.total_votes)
             }));
             filmovi = filmovi.slice(0, 20);
+            filtriraniFilmovi = filmovi;
             console.log(filmovi);
             fillTable(filmovi);
             fillSortByGenre(filmovi);
