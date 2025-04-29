@@ -1,4 +1,5 @@
 let filmovi = [];
+let filtriraniFilmovi = [];
 window.addEventListener('DOMContentLoaded', () =>{
     fetch('filmovi.csv')
         .then(res=>res.text())
@@ -16,11 +17,11 @@ window.addEventListener('DOMContentLoaded', () =>{
                 country: film.country?.split(',').map(c => c.trim()) || [],
                 total_votes: Number(film.total_votes)
             }));
-            const filmovi20 = filmovi.slice(0, 20);
-            console.log(filmovi20);
-            fillTable(filmovi20);
-            fillSortByGenre(filmovi20);
-            fillSortByCountry(filmovi20);
+            filmovi = filmovi.slice(0, 20);
+            console.log(filmovi);
+            fillTable(filmovi);
+            fillSortByGenre(filmovi);
+            fillSortByCountry(filmovi);
             const rangeInput = document.getElementById('filter-length');
             const lengthDisplay = document.getElementById('length-value');
             rangeInput.addEventListener('input', () => {
@@ -105,7 +106,7 @@ function filtriraj() {
     console.log(drzave);
     const duljina = parseInt(document.getElementById('filter-length').value);
     console.log(duljina);
-    const filtriraniFilmovi = filmovi.filter(film => {
+    filtriraniFilmovi = filmovi.filter(film => {
         const zanrMatch = !zanr || film.genre === zanr
         const godinaOdMatch = !godinaOd || film.year >= godinaOd;
         const drzavaMatch = drzave.length === 0 || drzave.some(country => film.country.includes(country));
@@ -113,8 +114,7 @@ function filtriraj() {
         return zanrMatch && godinaOdMatch && drzavaMatch && duljinaMatch;
     });
     console.log(filtriraniFilmovi);
-    var filmovi20 = filtriraniFilmovi.slice(0,20);
-    fillTable(filmovi20);
+    fillTable(filtriraniFilmovi);
 }
 
 let kosarica = [];
@@ -141,6 +141,11 @@ function osvjeziKosaricu() {
         li.appendChild(ukloniBtn);
         lista.appendChild(li);
     });
+}
+
+function sortByYears(){
+    filtriraniFilmovi.sort((a,b) => a.year - b.year);
+    fillTable(filtriraniFilmovi);
 }
 function ukloniIzKosarice(index) {
     kosarica.splice(index, 1);
